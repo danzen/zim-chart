@@ -52,15 +52,6 @@ STYLE = {}
 ```JavaScript
 import zim from "https://zimjs.org/cdn/016/zim_chart";
 ```
-
-<h2>NPM</h2>
-<p>This repository holds the NPM package so you can install from <a href=https://www.npmjs.com/package/@zimjs/chart target=node>@zimjs/chart</a> on NPM.  The <a href=https://www.npmjs.com/package/zimjs target=node>ZIM&nbsp;package</a> must be installed to work.</p>
-
-```JavaScript
-import zim from "zimjs"
-import { BarGraph } from "@zimjs/chart"
-```
-
 <h2>EXAMPLES</h2>
 <p>Here are a few examples that were made for the ZIM 020 Launch featuring CHART:</p>
 
@@ -73,6 +64,15 @@ import { BarGraph } from "@zimjs/chart"
 - https://zimjs.com/020/growthchart.html - Growth Chart
 - https://zimjs.com/020/wordcloud.html - Word Cloud
 - https://zimjs.com/020/championship.html - Championship Round Robin Tournament
+
+<h2>NPM</h2>
+<p>This repository holds the NPM package so you can install from <a href=https://www.npmjs.com/package/@zimjs/chart target=node>@zimjs/chart</a> on NPM.  The <a href=https://www.npmjs.com/package/zimjs target=node>ZIM&nbsp;package</a> must be installed to work.</p>
+
+```JavaScript
+import zim from "zimjs"
+import { BarGraph } from "@zimjs/chart"
+```
+
 
 <h2>ZIM</h2>
 <p>See the ZIM repository at https://github.com/danzen/zimjs for information on ZIM and open source license, etc.</p>
