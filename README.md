@@ -1,4 +1,4 @@
-![cam](https://github.com/danzen/zim-cam/assets/380281/1725004b-7b50-4405-beda-65be4279cbc6)
+[<img width="1500" height="400" alt="chart_library" src="https://github.com/user-attachments/assets/989a11f4-f774-435d-a0ca-bdc038f7ba6c" />](https://zimjs.com/chart.html)
 
 Chart is a helper module for the ZIM JavaScript Canvas Framework at https://zimjs.com. Chart includes a base Graph class that BarGraph, LineGraph, LiveGraph, and PlotGraph classes use.  There is also a Legend class that works with these.  Other charts include PieChart, GrowthChart (with an associated GrowthWidget), and RadarGraph. A Championship class is provided for round robin tournaments.  A WordCloud class makes word clounds from text copy - or from data created by the prepareWordData method.
 
