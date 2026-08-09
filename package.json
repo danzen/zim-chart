@@ -1,0 +1,41 @@
+{
+  "name": "@zimjs/chart",
+  "version": "1.0.0",
+  "description": "Chart module for ZIM JavaScript Canvas Framework",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danzen/zim-chart.git"
+  },
+  "keywords": [
+    "chart",
+    "graph",
+    "line graph",
+    "bar graph",
+    "plot graph",
+    "pie chart",
+    "radar graph",
+    "live graph",
+    "growth chart",
+    "word cloud",
+    "championship",
+    "round robin",
+    "tournament",
+    "zim",
+    "zimjs"
+  ],
+  "author": "Dr Abstract",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.3.3",
+    "zimjs": "^20.0.0"
+  },
+  "peerDependencies": {
+    "zimjs": "^20.0.0"
+  }
+  
+}
