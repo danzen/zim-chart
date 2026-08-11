@@ -1362,9 +1362,6 @@ zim.LiveGraph = function(width, height, title, info, data, src, timeStep, thickn
 	if (zot(fullGradients)) fullGradients = DS.fullGradients!=null?DS.fullGradients:true;
 	if (zot(animated)) animated = DS.animated!=null?DS.animated:true;
 
-
-	// TODO Need to ensure info or return or something
-
 	var labelH = info.labelH;
 	var labelV = info.labelV;
 	var dataH = info.dataH;
@@ -1402,6 +1399,8 @@ zim.LiveGraph = function(width, height, title, info, data, src, timeStep, thickn
 		});
 	}		
 
+	var ajax;
+	if (src) ajax = new zim.Ajax();
 
 	// ~~~~~~~~~~~~~  DRAW GRAPH  ~~~~~~~~~~~~~~~~
 
@@ -1537,19 +1536,23 @@ zim.LiveGraph = function(width, height, title, info, data, src, timeStep, thickn
 	// ~~~~~~~~~~~~~  INTERVAL  ~~~~~~~~~~~~~~~~
 
 	var newData;
+	var srcData;
 	function doInterval() {
 		if (!data) return;			
 		
-		var srcData;
 		if (src) {
 			// read current data from file and convert lines to array
-			srcData = [22,44];
+			// srcData = [22,44];
+			ajax.get(src + "?t=" + Date.now(), function(data, error) {
+				if (error) { zogy("ZIM LiveGraph: error: " + error); return; }
+				srcData = data;				
+			});
 		}
 		zim.loop(data, function(d,i) {	
 			var cd = that.currentData[i];
 			// need to ensure info and info has these				
 			if (!src) newData = info.dataV.start + (d.noise.simplex1D(count/(5/timeStep))+1)/2*(info.dataV.end-info.dataV.start);
-			else newData = srcData[i];
+			else if (srcData) newData = srcData[i];
 
 			var lastData = cd.dataH[0]!=null?cd.dataH[0]:timeStep;
 			cd.dataH.unshift(lastData-timeStep);
@@ -1559,8 +1562,6 @@ zim.LiveGraph = function(width, height, title, info, data, src, timeStep, thickn
 				cd.dataV.shift();
 			}
 		});
-		
-
 		if (!that.paused) {
 			var total =  Math.abs(info.dataH.start-info.dataH.end)/timeStep+3;
 			var start = Math.max(0, that.currentData[0].dataH.length-total+that.offset);
